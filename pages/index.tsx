@@ -2,20 +2,25 @@ import type {NextPage} from "next";
 import Head from "next/head";
 import Image from "next/image";
 import {Stack, Box, Typography} from "@mui/material";
-import theme, {pinkGradient} from "../styles/theme";
+import theme, {pinkGradient, blueGradient} from "../styles/theme";
+import Project from "../components/Project";
+import type {IProject} from "../interfaces";
+import {listProjects} from "../content/projects";
 
 const Home: NextPage = () => {
+  const projects = listProjects();
+
   return (
     <>
       <Head>
         <title>Nathalia Campos</title>
         <meta name="description" content="Nathalia Campos' personal website." />
       </Head>
-      <Stack component="main" spacing={{xs: 4, md: 8}}>
+      <Stack component="main" spacing={{xs: 8, md: 12}}>
         <Bio />
-        <Projects />
-        <Research />
+        <Projects projects={projects} />
         <Education />
+        <Research />
       </Stack>
     </>
   );
@@ -25,7 +30,7 @@ const Bio = () => {
   return (
     <Stack
       direction={{xs: "column", sm: "row"}}
-      justifyContent="space-around"
+      justifyContent="space-between"
       alignItems="center"
       spacing={4}
     >
@@ -35,25 +40,23 @@ const Bio = () => {
           <span style={pinkGradient}>I&apos;m Nathalia</span>
         </Typography>
         <Typography variant="subtitle1">
-          An engineer and a PhD student at{" "}
+          I&apos;m an engineer and a PhD student at{" "}
           <a href="https://taltech.ee/en/" target="_blank" rel="noreferrer">
             TalTech
           </a>
           .
         </Typography>
         <Typography variant="subtitle1">
-          I also code and experiment with AI in my free time.
+          In my free time, I love to code and experiment with AI.
         </Typography>
-        <Typography variant="subtitle1">Check out my projects.</Typography>
       </Stack>
       <Box
         sx={{
-          width: 250,
-          height: 250,
+          width: 300,
+          height: 300,
           position: "relative",
           margin: {xs: "auto", sm: 0},
-
-          boxShadow: theme.shadows[3],
+          boxShadow: theme.shadows[2],
           borderRadius: `${theme.shape.borderRadius}px`,
         }}
       >
@@ -71,12 +74,25 @@ const Bio = () => {
   );
 };
 
-const Projects = () => {
+interface ProjectsProps {
+  projects: IProject[];
+}
+
+const Projects = (props: ProjectsProps) => {
   return (
     <Stack>
-      <Typography variant="h2" textAlign="center">
+      <Typography
+        variant="h2"
+        textAlign="center"
+        marginBottom={{xs: 8, md: 12}}
+      >
         Projects
       </Typography>
+      <Stack gap={{xs: 8, md: 12}}>
+        {props.projects.map((project, index) => (
+          <Project key={index} project={project} />
+        ))}
+      </Stack>
     </Stack>
   );
 };
@@ -84,7 +100,11 @@ const Projects = () => {
 const Education = () => {
   return (
     <>
-      <Typography variant="h2" textAlign="center">
+      <Typography
+        variant="h2"
+        textAlign="center"
+        marginBottom={{xs: 8, md: 12}}
+      >
         Education
       </Typography>
     </>
@@ -94,7 +114,11 @@ const Education = () => {
 const Research = () => {
   return (
     <>
-      <Typography variant="h2" textAlign="center">
+      <Typography
+        variant="h2"
+        textAlign="center"
+        marginBottom={{xs: 8, md: 12}}
+      >
         Research
       </Typography>
     </>

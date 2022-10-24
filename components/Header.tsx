@@ -5,7 +5,6 @@ import {
   Stack,
   AppBar,
   Toolbar,
-  Button,
   IconButton,
   Typography,
   Tooltip,
