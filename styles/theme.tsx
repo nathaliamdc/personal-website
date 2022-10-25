@@ -33,7 +33,7 @@ export const boxShadowGradient = {
     background:
       "linear-gradient( 65.9deg,  #0052d4 5.5%, #607eff 54.2%, #002ba2 55.2%, #DD2476 98.4% )",
     transform: "translate3d(0px, 10px, 0) scale(0.98)",
-    filter: "blur(40px)",
+    filter: "blur(45px)",
     opacity: "var(0.7)",
     transition: "opacity 0.3s",
     borderRadius: "inherit",
