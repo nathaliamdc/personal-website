@@ -11,10 +11,8 @@ const Layout = (props: LayoutProps) => {
   return (
     <>
       <Header />
-      <Container sx={{paddingY: {xs: 4, md: 8, lg: 12}}}>
-        <Toolbar />
-        {props.children}
-      </Container>
+      <Toolbar />
+      {props.children}
       <Footer />
     </>
   );

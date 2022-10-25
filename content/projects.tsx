@@ -18,6 +18,8 @@ const Kubis: IProject = {
     "Postgres",
     "Kubernetes",
     "AWS",
+    "Docker",
+    "Terraform",
   ],
   image: KubisImage,
 };
@@ -36,6 +38,8 @@ const MyMLOps: IProject = {
     "Postgres",
     "Kubernetes",
     "AWS",
+    "Docker",
+    "Terraform",
   ],
   image: MyMLOpsImage,
 };

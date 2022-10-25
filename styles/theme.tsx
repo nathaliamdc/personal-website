@@ -5,10 +5,7 @@ import {
   ThemeProvider as MuiThemeProvider,
   StyledEngineProvider,
 } from "@mui/material/styles";
-import {blueGrey} from "@mui/material/colors";
-import {CssBaseline} from "@mui/material";
-
-export const blueBlack = "#1b1e2e";
+import {CssBaseline, LinkProps} from "@mui/material";
 
 export const pinkGradient = {
   backgroundImage: "linear-gradient(315deg, #FF512F 0%, #DD2476 100%)",
@@ -17,13 +14,49 @@ export const pinkGradient = {
 };
 
 export const blueGradient = {
-  backgroundImage:
-    "linear-gradient(315deg, #6FB1FC 0%, #4364F7 40%, #0052D4 100%)",
+  backgroundImage: "linear-gradient(315deg, #2af598 0%, #009efd 100%);",
   "-webkit-background-clip": "text",
   "-webkit-text-fill-color": "transparent",
 };
 
-const borderRadius = 8;
+export const boxShadowGradient = {
+  position: "relative",
+  background: "white",
+  ":before": {
+    content: '""',
+    zIndex: -1,
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    background:
+      "linear-gradient( 65.9deg,  #0052d4 5.5%, #607eff 54.2%, #002ba2 55.2%, #DD2476 98.4% )",
+    transform: "translate3d(0px, 10px, 0) scale(0.98)",
+    filter: "blur(40px)",
+    opacity: "var(0.7)",
+    transition: "opacity 0.3s",
+    borderRadius: "inherit",
+  },
+  "::after": {
+    content: '""',
+    zIndex: -1,
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    background: "inherit",
+    borderRadius: "inherit",
+  },
+};
+
+export const darkBackground = {
+  backgroundColor: "rgba(0,0,0,0.9)",
+  zIndex: 0,
+};
+
+const borderRadius = 12;
 
 const typography = {
   fontSize: 18,
@@ -33,36 +66,43 @@ const typography = {
     fontWeight: 800,
     fontSize: "101.01px",
     lineHeight: 1.25,
+    color: "rgba(0,0,0)",
   },
   h2: {
     fontFamily: "Inter",
     fontWeight: 800,
     fontSize: "75.78px",
+    color: "rgba(0,0,0)",
   },
   h3: {
     fontFamily: "Inter",
     fontWeight: 700,
     fontSize: "56.85px",
+    color: "rgba(0,0,0)",
   },
   h4: {
     fontFamily: "Inter",
     fontWeight: 700,
     fontSize: "42.65px",
+    color: "rgba(0,0,0)",
   },
   h5: {
     fontFamily: "Inter",
     fontWeight: 700,
     fontSize: "31.99px",
+    color: "rgba(0,0,0)",
   },
   h6: {
     fontFamily: "Inter",
     fontWeight: 700,
     fontSize: "20.00px",
+    color: "rgba(0,0,0)",
   },
   subtitle1: {
     fontFamily: "Inter",
-    fontWeight: 400,
+    fontWeight: 600,
     fontSize: "24.00px",
+    color: "rgba(0,0,0,0.7)",
   },
   subtitle2: {
     fontFamily: "Inter",
@@ -71,14 +111,15 @@ const typography = {
   },
   body1: {
     fontFamily: "Inter",
-    fontWeight: 400,
+    fontWeight: 600,
     fontSize: "24.00px",
-    lineHeight: 1.7,
+    color: "rgba(0,0,0,0.7)",
   },
   body2: {
     fontFamily: "Inter",
     fontWeight: 400,
     fontSize: "18.00px",
+    color: "rgba(0,0,0,0.7)",
   },
   button: {
     fontFamily: "Inter",
@@ -108,7 +149,6 @@ const palette = {
   },
   background: {
     default: "#FFFFFF",
-    dark: blueBlack,
   },
   common: {
     black: "#171616",
@@ -123,16 +163,6 @@ const palette = {
     main: "#F1AA26",
     dark: "#ba7b00",
   },
-  action: {
-    active: blueGrey[400],
-    hover: blueGrey[50],
-    hoverOpacity: 0.04,
-    selected: blueGrey[50],
-    disabled: blueGrey[200],
-    disabledBackground: blueGrey[100],
-    focus: blueGrey[300],
-  },
-  grey: blueGrey,
 };
 
 const breakpoints = {
@@ -167,6 +197,21 @@ const components = {
   MuiButtonBase: {
     defaultProps: {
       disableRipple: true,
+    },
+  },
+  MuiLink: {
+    defaultProps: {
+      underline: "none",
+    } as LinkProps,
+    styleOverrides: {
+      root: {
+        fontWeight: 600,
+      },
+    },
+  },
+  MuiChip: {
+    styleOverrides: {
+      root: {...typography["body2"]},
     },
   },
 };

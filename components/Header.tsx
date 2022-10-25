@@ -63,7 +63,7 @@ const Logo = () => {
   return (
     <Link href="/">
       <Typography
-        variant="h5"
+        variant="h6"
         component="a"
         sx={{":hover": {cursor: "pointer"}}}
       >
