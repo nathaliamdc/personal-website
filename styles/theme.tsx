@@ -6,15 +6,10 @@ import {
   StyledEngineProvider,
 } from "@mui/material/styles";
 import {CssBaseline, LinkProps} from "@mui/material";
+import {grey} from "@mui/material/colors";
 
 export const pinkGradient = {
   backgroundImage: "linear-gradient(315deg, #FF512F 0%, #DD2476 100%)",
-  "-webkit-background-clip": "text",
-  "-webkit-text-fill-color": "transparent",
-};
-
-export const blueGradient = {
-  backgroundImage: "linear-gradient(315deg, #2af598 0%, #009efd 100%);",
   "-webkit-background-clip": "text",
   "-webkit-text-fill-color": "transparent",
 };
@@ -31,9 +26,9 @@ export const boxShadowGradient = {
     bottom: 0,
     left: 0,
     background:
-      "linear-gradient( 65.9deg,  #0052d4 5.5%, #607eff 54.2%, #002ba2 55.2%, #DD2476 98.4% )",
+      "linear-gradient( 65.9deg, #607eff  5.5%, #0052d4 54.2%, #002ba2 55.2%, #DD2476 98.4% )",
     transform: "translate3d(0px, 10px, 0) scale(0.98)",
-    filter: "blur(45px)",
+    filter: "blur(30px)",
     opacity: "var(0.7)",
     transition: "opacity 0.3s",
     borderRadius: "inherit",
@@ -51,8 +46,8 @@ export const boxShadowGradient = {
   },
 };
 
-export const darkBackground = {
-  backgroundColor: "rgba(0,0,0,0.9)",
+export const lightBackground = {
+  backgroundColor: grey[50],
   zIndex: 0,
 };
 
@@ -212,6 +207,8 @@ const components = {
   MuiChip: {
     styleOverrides: {
       root: {...typography["body2"]},
+      colorPrimary: {color: "white"},
+      filled: {backgroundColor: grey[100]},
     },
   },
 };

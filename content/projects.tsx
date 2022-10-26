@@ -1,10 +1,10 @@
-import {IProject} from "../interfaces";
+import {ISoftwareProject} from "../interfaces";
 import KubisLogo from "../public/kubis.svg";
 import KubisImage from "../public/mymlops_preview.png";
 import MyMLOpsLogo from "../public/mymlops.svg";
 import MyMLOpsImage from "../public/mymlops_preview.png";
 
-const Kubis: IProject = {
+const Kubis: ISoftwareProject = {
   name: "Kubis",
   logo: KubisLogo,
   websiteURL: "https://www.kubis.ai",
@@ -24,7 +24,7 @@ const Kubis: IProject = {
   image: KubisImage,
 };
 
-const MyMLOps: IProject = {
+const MyMLOps: ISoftwareProject = {
   name: "MyMLOps",
   logo: MyMLOpsLogo,
   websiteURL: "https://www.mymlops.com",
@@ -44,6 +44,6 @@ const MyMLOps: IProject = {
   image: MyMLOpsImage,
 };
 
-export const listProjects = () => {
+export const listSoftwareProjects = () => {
   return [MyMLOps, Kubis];
 };

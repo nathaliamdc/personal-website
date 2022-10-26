@@ -1,11 +1,20 @@
 import React from "react";
 import Image, {StaticImageData} from "next/image";
-import {Grid, Stack, Box, Chip, Typography} from "@mui/material";
+import {
+  Grid,
+  Stack,
+  Box,
+  Chip,
+  IconButton,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import theme, {boxShadowGradient} from "../styles/theme";
-import {IProject} from "../interfaces";
+import {ISoftwareProject} from "../interfaces";
+import {VscGlobe} from "react-icons/vsc";
 
 interface ProjectProps {
-  project: IProject;
+  project: ISoftwareProject;
 }
 
 const Project = (props: ProjectProps) => {
@@ -14,7 +23,7 @@ const Project = (props: ProjectProps) => {
       container
       marginY={{xs: 2}}
       paddingX={{xs: 2, sm: 4, md: 6}}
-      paddingY={{xs: 4, sm: 6, md: 8}}
+      paddingY={{xs: 3, sm: 6, md: 8}}
       sx={{
         ...boxShadowGradient,
         borderRadius: `${theme.shape.borderRadius}px`,
@@ -27,8 +36,8 @@ const Project = (props: ProjectProps) => {
             image={props.project.logo}
             url={props.project.websiteURL}
           />
-          <Description text={props.project.description} />
-          <TechStack techStack={props.project.techStack} />
+          <Description>{props.project.description}</Description>
+          <TechStack tools={props.project.techStack} />
         </Stack>
       </Grid>
       <Grid item xs={12} md={6} lg={7}>
@@ -46,29 +55,39 @@ interface HeaderProps {
 
 const Header = (props: HeaderProps) => {
   return (
-    <Box
-      sx={{
-        height: {xs: 35, md: 40},
-        position: "relative",
-      }}
-      component="a"
-      href={props.url}
-      target="_blank"
-      rel="noreferrer"
-    >
-      <Image
-        src={props.image.src}
-        alt={props.name}
-        layout="fill"
-        objectFit="contain"
-        objectPosition="left center"
-      />
-    </Box>
+    <Stack direction="row" justifyContent="space-between" alignItems="center">
+      <Box
+        sx={{
+          height: {xs: 35, md: 50},
+          position: "relative",
+          flexGrow: 1,
+        }}
+        component="a"
+        href={props.url}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image
+          src={props.image.src}
+          alt={props.name}
+          layout="fill"
+          objectFit="contain"
+          objectPosition="left center"
+        />
+      </Box>
+      <Box>
+        <Tooltip title="Website">
+          <IconButton>
+            <VscGlobe size={25} />
+          </IconButton>
+        </Tooltip>
+      </Box>
+    </Stack>
   );
 };
 
-const Description = (props: {text: string}) => {
-  return <Typography variant="body1">{props.text}</Typography>;
+const Description = (props: {children: string}) => {
+  return <Typography variant="body1">{props.children}</Typography>;
 };
 
 interface PreviewProps {
@@ -104,7 +123,7 @@ const Preview = (props: PreviewProps) => {
 };
 
 interface TechStackProps {
-  techStack: string[];
+  tools: string[];
 }
 
 const TechStack = (props: TechStackProps) => {
@@ -112,15 +131,8 @@ const TechStack = (props: TechStackProps) => {
     <Stack spacing={1}>
       <Typography variant="overline">Tech stack</Typography>
       <Stack direction="row" gap={{xs: 1, md: 1.5}} flexWrap="wrap">
-        {props.techStack.map((tech, index) => (
-          <Chip
-            key={index}
-            label={tech}
-            // sx={{
-            //   backgroundColor: theme.palette.secondary.light,
-            //   color: "white",
-            // }}
-          />
+        {props.tools.map((tech, index) => (
+          <Chip key={index} label={tech} />
         ))}
       </Stack>
     </Stack>
