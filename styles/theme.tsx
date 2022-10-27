@@ -5,7 +5,7 @@ import {
   ThemeProvider as MuiThemeProvider,
   StyledEngineProvider,
 } from "@mui/material/styles";
-import {CssBaseline, LinkProps} from "@mui/material";
+import {CssBaseline, LinkProps, keyframes} from "@mui/material";
 import {grey} from "@mui/material/colors";
 
 export const pinkGradient = {
@@ -13,6 +13,30 @@ export const pinkGradient = {
   "-webkit-background-clip": "text",
   "-webkit-text-fill-color": "transparent",
 };
+
+const shiftingEffect = keyframes`
+  0% {
+    filter: blur(20px);
+    transform: translate3d(10px, 0px, 0) scale(0.98);
+  }
+  20% {
+    transform: translate3d(10px, -10px, 0) scale(0.98);
+  }
+  40% {
+    filter: blur(50px);
+    transform: translate3d(-20px, 0px, 0) scale(0.98);
+  }
+  60% {
+    transform: translate3d(-15px, 15px, 0) scale(0.98);
+  }
+  80% {
+    transform: translate3d(0px, 25px, 0) scale(0.98);
+  }
+  100% {
+    filter: blur(20px);
+    transform: translate3d(10px, 0px, 0) scale(0.98);
+  }
+`;
 
 export const boxShadowGradient = {
   position: "relative",
@@ -25,24 +49,14 @@ export const boxShadowGradient = {
     right: 0,
     bottom: 0,
     left: 0,
+    // background:
+    //   "linear-gradient( 65.9deg, #607eff  5.5%, #0052d4 54.2%, #002ba2 55.2%, #DD2476 98.4% )",
+    // background: "linear-gradient(315deg, #FF512F 0%, #DD2476 100%)",
     background:
-      "linear-gradient( 65.9deg, #607eff  5.5%, #0052d4 54.2%, #002ba2 55.2%, #DD2476 98.4% )",
-    transform: "translate3d(0px, 10px, 0) scale(0.98)",
-    filter: "blur(30px)",
-    opacity: "var(0.7)",
-    transition: "opacity 0.3s",
-    borderRadius: "inherit",
-  },
-  "::after": {
-    content: '""',
-    zIndex: -1,
-    position: "absolute",
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    background: "inherit",
-    borderRadius: "inherit",
+      "linear-gradient(45deg, rgb(0, 136, 255) 0%, rgb(153, 0, 255) 100%)",
+    filter: "blur(20px)",
+    animation: `${shiftingEffect} 6s linear infinite`,
+    // opacity: 0.8,
   },
 };
 
@@ -108,13 +122,13 @@ const typography = {
     fontFamily: "Inter",
     fontWeight: 600,
     fontSize: "24.00px",
-    color: "rgba(0,0,0,0.7)",
+    color: "rgba(0,0,0,0.6)",
   },
   body2: {
     fontFamily: "Inter",
     fontWeight: 400,
     fontSize: "18.00px",
-    color: "rgba(0,0,0,0.7)",
+    color: "rgba(0,0,0,0.6)",
   },
   button: {
     fontFamily: "Inter",

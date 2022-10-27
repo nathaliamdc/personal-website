@@ -76,16 +76,6 @@ const Logo = () => {
 const Links = () => {
   return (
     <Stack direction="row" spacing={1}>
-      <Tooltip title="GitHub">
-        <IconButton
-          component="a"
-          href="https://github.com/nathaliamdc"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <VscGithubInverted size={25} />
-        </IconButton>
-      </Tooltip>
       <Tooltip title="LinkedIn">
         <IconButton
           component="a"
@@ -94,6 +84,16 @@ const Links = () => {
           rel="noreferrer"
         >
           <BsLinkedin size={25} />
+        </IconButton>
+      </Tooltip>
+      <Tooltip title="GitHub">
+        <IconButton
+          component="a"
+          href="https://github.com/nathaliamdc"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <VscGithubInverted size={25} />
         </IconButton>
       </Tooltip>
     </Stack>

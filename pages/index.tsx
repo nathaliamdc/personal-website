@@ -6,6 +6,7 @@ import {Container, Stack, Box, Typography, Link} from "@mui/material";
 import theme, {pinkGradient, lightBackground} from "../styles/theme";
 import SoftwareProject from "../components/SoftwareProject";
 import CareerPosition from "../components/CareerPosition";
+import ImageSlideshow from "../components/ImageSlideshow";
 import type {ISoftwareProject, ICareerPosition} from "../interfaces";
 import {listSoftwareProjects} from "../content/projects";
 import {listCareerPositions} from "../content/education";
@@ -159,14 +160,28 @@ const Education = (props: EducationProps) => {
 };
 
 const Research = () => {
+  const imagePaths = [
+    "/research1.jpg",
+    "/research2.jpg",
+    "/research3.jpg",
+    "/research4.jpg",
+    "/research5.jpg",
+    "/research6.jpg",
+    "/research7.jpg",
+    "/research8.jpg",
+  ];
+
   return (
-    <Container>
-      <Stack paddingY={{xs: 4, md: 8}}>
-        <Typography variant="h2" textAlign="center" marginBottom={{xs: 8}}>
-          Research
-        </Typography>
-      </Stack>
-    </Container>
+    <>
+      <Container>
+        <Stack paddingY={{xs: 4, md: 8}}>
+          <Typography variant="h2" textAlign="center" marginBottom={{xs: 8}}>
+            Research
+          </Typography>
+        </Stack>
+      </Container>
+      <ImageSlideshow srcList={imagePaths} />
+    </>
   );
 };
 
