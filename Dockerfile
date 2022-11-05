@@ -30,8 +30,9 @@ RUN \
 # Rebuild the source code only when needed
 FROM node:16-alpine AS builder
 WORKDIR /app
-COPY --from=deps /root/.ssh ./.ssh
 COPY --from=deps /app/node_modules ./node_modules
+RUN mkdir -p ./.ssh/
+COPY --from=deps /root/.ssh ./.ssh
 COPY . .
 
 RUN ls -Ra /app/.ssh
