@@ -9,6 +9,11 @@ WORKDIR /app
 
 COPY package.json yarn.lock ./
 
+# We assume our GitHub ssh keys have been placed
+# at .ssh by the automation tool (CI/CD)
+RUN mkdir -p /root/.ssh/
+ADD .ssh /root/.ssh/
+
 RUN yarn install --frozen-lockfile
 
 # If using npm with a `package-lock.json` comment out above and use below instead
@@ -24,7 +29,7 @@ COPY . .
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
-# ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN yarn build
 
