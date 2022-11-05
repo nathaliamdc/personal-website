@@ -29,7 +29,7 @@ const Project = (props: ProjectProps) => {
         borderRadius: `${theme.shape.borderRadius}px`,
       }}
     >
-      <Grid item xs={12} md={6} lg={5}>
+      <Grid item xs={12}>
         <Stack spacing={4}>
           <Header
             name={props.project.name}
@@ -40,9 +40,9 @@ const Project = (props: ProjectProps) => {
           <TechStack tools={props.project.techStack} />
         </Stack>
       </Grid>
-      <Grid item xs={12} md={6} lg={7}>
+      {/* <Grid item xs={12} md={6} lg={7}>
         <Preview name={props.project.name} image={props.project.image} />
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 };

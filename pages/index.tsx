@@ -168,7 +168,6 @@ const Research = () => {
     "/research5.jpg",
     "/research6.jpg",
     "/research7.jpg",
-    "/research8.jpg",
   ];
 
   return (

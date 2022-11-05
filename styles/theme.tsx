@@ -15,27 +15,36 @@ export const pinkGradient = {
 };
 
 const shiftingEffect = keyframes`
-  0% {
-    filter: blur(20px);
-    transform: translate3d(10px, 0px, 0) scale(0.98);
-  }
-  20% {
-    transform: translate3d(10px, -10px, 0) scale(0.98);
-  }
-  40% {
-    filter: blur(50px);
-    transform: translate3d(-20px, 0px, 0) scale(0.98);
-  }
-  60% {
-    transform: translate3d(-15px, 15px, 0) scale(0.98);
-  }
-  80% {
-    transform: translate3d(0px, 25px, 0) scale(0.98);
-  }
-  100% {
-    filter: blur(20px);
-    transform: translate3d(10px, 0px, 0) scale(0.98);
-  }
+  // 0% {
+  //   filter: blur(20px);
+  //   transform: translate3d(10px, 0px, 0) scale(0.98);
+  // }
+  // 20% {
+  //   transform: translate3d(10px, -10px, 0) scale(0.98);
+  // }
+  // 40% {
+  //   filter: blur(50px);
+  //   transform: translate3d(-20px, 0px, 0) scale(0.98);
+  // }
+  // 60% {
+  //   transform: translate3d(-15px, 15px, 0) scale(0.98);
+  // }
+  // 80% {
+  //   transform: translate3d(0px, 25px, 0) scale(0.98);
+  // }
+  // 100% {
+  //   filter: blur(20px);
+  //   transform: translate3d(10px, 0px, 0) scale(0.98);
+  // }
+  // 0% {
+  //   background: #FF512F;
+  // }
+  // 50% {
+  //   background: #DD2476;
+  // }
+  // 100% {
+  //   background: #FF512F;
+  // }
 `;
 
 export const boxShadowGradient = {
@@ -49,14 +58,12 @@ export const boxShadowGradient = {
     right: 0,
     bottom: 0,
     left: 0,
-    // background:
-    //   "linear-gradient( 65.9deg, #607eff  5.5%, #0052d4 54.2%, #002ba2 55.2%, #DD2476 98.4% )",
-    // background: "linear-gradient(315deg, #FF512F 0%, #DD2476 100%)",
     background:
       "linear-gradient(45deg, rgb(0, 136, 255) 0%, rgb(153, 0, 255) 100%)",
-    filter: "blur(20px)",
+    // background: "linear-gradient(315deg, #FF512F 0%, #DD2476 100%)",
+    filter: "blur(15px)",
     animation: `${shiftingEffect} 6s linear infinite`,
-    // opacity: 0.8,
+    opacity: 0.8,
   },
 };
 
