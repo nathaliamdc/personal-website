@@ -62,13 +62,7 @@ const Header = (props: HeaderProps) => {
 const Logo = () => {
   return (
     <Link href="/">
-      <Typography
-        variant="h6"
-        component="a"
-        sx={{":hover": {cursor: "pointer"}}}
-      >
-        Nathalia Campos
-      </Typography>
+      <Typography variant="h6">Nathalia Campos</Typography>
     </Link>
   );
 };
