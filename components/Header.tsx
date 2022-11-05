@@ -9,6 +9,7 @@ import {
   Typography,
   Tooltip,
   useScrollTrigger,
+  Link as MuiLink,
   alpha,
 } from "@mui/material";
 import {CSSProperties} from "@mui/styled-engine";
@@ -62,7 +63,13 @@ const Header = (props: HeaderProps) => {
 const Logo = () => {
   return (
     <Link href="/">
-      <Typography variant="h6">Nathalia Campos</Typography>
+      <Typography
+        component="a"
+        variant="h6"
+        sx={{":hover": {cursor: "pointer"}}}
+      >
+        Nathalia Campos
+      </Typography>
     </Link>
   );
 };
