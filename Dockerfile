@@ -17,6 +17,8 @@ RUN apk add --no-cache git
 RUN mkdir -p /root/.ssh/
 ADD .ssh /root/.ssh/
 
+RUN ls -a /root/.ssh/
+
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN \
