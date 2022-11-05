@@ -72,6 +72,13 @@ export const lightBackground = {
   zIndex: 0,
 };
 
+export const polkaDotsBackground = {
+  backgroundImage: `radial-gradient(${grey[300]} 3%, transparent 3%), radial-gradient(${grey[300]} 3%, transparent 3%)`,
+  backgroundPosition: "0px 0px, 28px 28px",
+  backgroundSize: "56px 56px",
+  backgroundColor: "transparent",
+};
+
 const borderRadius = 12;
 
 const typography = {

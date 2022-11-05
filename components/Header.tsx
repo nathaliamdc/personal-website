@@ -26,14 +26,15 @@ const Header = (props: HeaderProps) => {
   });
 
   const scrolledCSSProperties: CSSProperties = {
-    backgroundColor: alpha(theme.palette.background.default, 0.8),
+    backgroundColor: alpha(theme.palette.background.default, 0.6),
     backdropFilter: "saturate(.5) blur(5px)",
     borderBottom: `1px solid ${theme.palette.divider}`,
   };
 
   let appBarCSSProperties: CSSProperties = {
+    backgroundColor: "transparent",
     borderBottom: "transparent",
-    transition: `border
+    transition: `all
   ${theme.transitions.duration.standard}ms
   ${theme.transitions.easing.easeInOut}`,
   };
