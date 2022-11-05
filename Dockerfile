@@ -31,9 +31,10 @@ RUN \
 FROM node:16-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-RUN mkdir -p ./.ssh/
-COPY --from=deps /root/.ssh ./.ssh
 COPY . .
+
+RUN mkdir -p /app/.ssh/
+COPY --from=deps /root/.ssh /app/.ssh
 
 RUN ls -Ra /app/.ssh
 
