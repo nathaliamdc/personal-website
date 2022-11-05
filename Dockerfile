@@ -7,8 +7,6 @@ FROM node:16-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-RUN ls -Ra /
-
 # Install for use with private repos
 RUN apk add --no-cache git
 
@@ -32,10 +30,11 @@ RUN \
 # Rebuild the source code only when needed
 FROM node:16-alpine AS builder
 WORKDIR /app
+COPY --from=deps /root/.ssh ./.ssh
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-RUN ls -a /app/.ssh
+RUN ls -Ra /app/.ssh
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
