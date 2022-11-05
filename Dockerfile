@@ -24,8 +24,11 @@ RUN yarn install --frozen-lockfile
 FROM node:16-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /root/.ssh ./.ssh
+RUN mkdir -p /app/.ssh/
+COPY --from=deps /root/.ssh /app/.ssh
 COPY . .
+
+
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
