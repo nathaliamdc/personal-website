@@ -7,6 +7,14 @@ FROM node:16-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
+# Install for use with private repos
+RUN apk add --no-cache git
+
+# We assume our GitHub ssh keys have been placed
+# at .ssh by the automation tool (CI/CD)
+RUN mkdir -p /root/.ssh/
+ADD .ssh /root/.ssh/
+
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN \
