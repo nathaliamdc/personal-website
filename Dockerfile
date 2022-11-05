@@ -7,8 +7,6 @@ FROM node:16-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-RUN ls -a .ssh
-
 # Install for use with private repos
 RUN apk add --no-cache git
 
