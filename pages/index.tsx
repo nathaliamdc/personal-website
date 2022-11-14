@@ -19,7 +19,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Nathalia Campos</title>
-        <meta name="description" content="Nathalia Campos' personal website." />
+        <meta name="description" content="Nathalia's personal website." />
       </Head>
       <Stack component="main" alignItems="center">
         <Bio />
