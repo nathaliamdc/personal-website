@@ -19,13 +19,4 @@ const Layout = (props: LayoutProps) => {
   );
 };
 
-// /* Polka dot background */
-// body {
-//   background-image: radial-gradient(rgb(232, 232, 232) 10%, transparent 10%),
-//     radial-gradient(rgb(232, 232, 232) 10%, transparent 10%);
-//   background-position: 0px 0px, 48px 48px;
-//   background-size: 96px 96px;
-//   background-color: rgb(255, 255, 255);
-// }
-
 export default Layout;
