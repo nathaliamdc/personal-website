@@ -10,13 +10,6 @@ WORKDIR /app
 # Install for use with private repos
 RUN apk add --no-cache git
 
-# We assume our GitHub ssh keys have been placed
-# at .ssh by the automation tool (CI/CD)
-RUN mkdir -p /root/.ssh/
-ADD .ssh /root/.ssh/
-
-RUN ls -a /root/.ssh/
-
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN \
@@ -26,6 +19,10 @@ RUN \
   else echo "Lockfile not found." && exit 1; \
   fi
 
+# We assume our GitHub ssh keys have been placed
+# at .ssh by the automation tool (CI/CD)
+RUN mkdir -p /app/.ssh/
+ADD .ssh /app/.ssh/
 
 # Rebuild the source code only when needed
 FROM node:16-alpine AS builder
@@ -33,10 +30,11 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# RUN mkdir -p ./.ssh/
-# COPY --from=deps /root/.ssh /app/.ssh
-
-# RUN ls -Ra /app/.ssh
+# Github keys placed by CI/CD need to be deleted. The are owned by the root user.
+# It seems nextjs tries to read them and is not able to, resulting in an error.
+# If not deleted, the following error happens:
+# ENOENT: no such file or directory, stat '/app/.ssh'
+RUN rm -r /app/.ssh
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
