@@ -89,13 +89,13 @@ const WrappedImage = (props: {src: string}) => {
       <Image
         src={props.src}
         alt=""
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
+        fill
+        sizes="100vw"
         style={{
           borderRadius: `${theme.shape.borderRadius}px`,
-        }}
-      />
+          objectFit: "cover",
+          objectPosition: "center"
+        }} />
     </Box>
   );
 };

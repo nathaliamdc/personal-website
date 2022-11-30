@@ -1,4 +1,4 @@
-import {StaticImageData} from "next/image";
+import { StaticImageData } from "next/legacy/image";
 
 /**
  * Represents a personal software project.

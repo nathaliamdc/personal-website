@@ -8,10 +8,10 @@ import {
 import {CssBaseline, LinkProps, keyframes} from "@mui/material";
 import {grey} from "@mui/material/colors";
 
-export const pinkGradient = {
+export const pinkGradient: React.CSSProperties = {
   backgroundImage: "linear-gradient(315deg, #FF512F 0%, #DD2476 100%)",
-  "-webkit-background-clip": "text",
-  "-webkit-text-fill-color": "transparent",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
 };
 
 const shiftingEffect = keyframes`

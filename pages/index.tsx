@@ -1,7 +1,7 @@
 import React from "react";
 import type {NextPage} from "next";
 import Head from "next/head";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import {Container, Stack, Box, Typography, Link} from "@mui/material";
 import theme, {pinkGradient, lightBackground} from "../styles/theme";
 import SoftwareProject from "../components/SoftwareProject";
@@ -82,12 +82,12 @@ const Bio = () => {
           <Image
             src="/portrait.jpg"
             alt="Nathalia's portrait"
-            layout="fill"
-            objectFit="cover"
+            fill
+            sizes="100vw"
             style={{
               borderRadius: `${theme.shape.borderRadius}px`,
-            }}
-          />
+              objectFit: "cover"
+            }} />
         </Box>
       </Stack>
     </Container>
