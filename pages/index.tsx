@@ -77,17 +77,19 @@ const Bio = () => {
             position: "relative",
             margin: theme.spacing(3),
             borderRadius: `${theme.shape.borderRadius}px`,
+            background: theme.palette.grey[50],
           }}
         >
           <Image
-            src="/portrait.jpg"
+            src="/portrait.png"
             alt="Nathalia's portrait"
             fill
             sizes="100vw"
             style={{
               borderRadius: `${theme.shape.borderRadius}px`,
-              objectFit: "cover"
-            }} />
+              objectFit: "cover",
+            }}
+          />
         </Box>
       </Stack>
     </Container>
