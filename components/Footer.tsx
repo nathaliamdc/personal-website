@@ -16,7 +16,7 @@ const Footer = (props: FooterProps) => {
         flexWrap="wrap"
       >
         <Typography variant="body2">
-          Nathalia Campos © {new Date().getFullYear()}
+          Nathalia de Morais Dias Campos © {new Date().getFullYear()}
         </Typography>
         <Button
           startIcon={<VscGithubInverted />}
