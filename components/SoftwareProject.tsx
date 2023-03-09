@@ -1,5 +1,5 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import Image, {StaticImageData} from "next/image";
 import {
   Grid,
   Stack,
@@ -74,12 +74,13 @@ const Header = (props: HeaderProps) => {
           sizes="100vw"
           style={{
             objectFit: "contain",
-            objectPosition: "left center"
-          }} />
+            objectPosition: "left center",
+          }}
+        />
       </Box>
       <Box>
         <Tooltip title="Website">
-          <IconButton>
+          <IconButton LinkComponent="a" href={props.url} target="_blank">
             <VscGlobe size={25} />
           </IconButton>
         </Tooltip>
@@ -118,8 +119,9 @@ const Preview = (props: PreviewProps) => {
         style={{
           borderRadius: `${theme.shape.borderRadius}px`,
           objectFit: "cover",
-          objectPosition: "center"
-        }} />
+          objectPosition: "center",
+        }}
+      />
     </Box>
   );
 };
