@@ -105,15 +105,13 @@ const SoftwareProjects = (props: SoftwareProjectsProps) => {
     <Box width="100%" sx={lightBackground}>
       <Container>
         <Stack paddingY={{xs: 4, md: 8, lg: 12}}>
-          <Typography variant="h2" textAlign="center" gutterBottom>
-            Projects
-          </Typography>
           <Typography
-            variant="subtitle1"
+            variant="h2"
             textAlign="center"
+            gutterBottom
             marginBottom={{xs: 8}}
           >
-            In my free time, I love to code and experiment with AI.
+            Projects
           </Typography>
           <Stack gap={{xs: 8, md: 12}}>
             {props.projects.map((project, index) => (
