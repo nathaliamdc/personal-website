@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {Stack, Box, Chip, Divider, Typography, Link} from "@mui/material";
 import {ICareerPosition, IInstitution} from "../interfaces";
 import theme from "../styles/theme";
@@ -21,7 +22,7 @@ const CareerPosition = (props: CareerPositionProps) => {
           <Title>{props.position.title}</Title>
           <Institutions institutions={props.position.institutions} />
         </Stack>
-        <CountryFlag>{props.position.countryFlag}</CountryFlag>
+        <CountryFlag>{props.position.countryCode}</CountryFlag>
       </Stack>
     </Stack>
   );
@@ -57,9 +58,12 @@ const CountryFlag = (props: {children: React.ReactNode}) => {
           padding: {xs: 4, md: 5},
         }}
       >
-        <Typography variant="h4" component="p">
-          {props.children}
-        </Typography>
+        <Image
+          src={`https://flagcdn.com/64x48/${props.children}.png`}
+          width="64"
+          height="48"
+          alt={`${props.children} flag`}
+        />
       </Box>
     </Box>
   );

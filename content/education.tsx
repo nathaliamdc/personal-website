@@ -40,7 +40,7 @@ const PhDEstonia: ICareerPosition = {
   description: "",
   duration: "2020 - ",
   country: "Estonia",
-  countryFlag: "🇪🇪",
+  countryCode: "ee",
   institutions: [TalTech],
 };
 
@@ -49,7 +49,7 @@ const PhDBelgium: ICareerPosition = {
   description: "",
   duration: "2018 - 2020",
   country: "Belgium",
-  countryFlag: "🇧🇪",
+  countryCode: "be",
   institutions: [KULeuven, Elia],
 };
 
@@ -58,7 +58,7 @@ const Masters: ICareerPosition = {
   description: "",
   duration: "2016 - 2017",
   country: "France",
-  countryFlag: "🇫🇷",
+  countryCode: "fr",
   institutions: [ULille, L2EP],
 };
 
@@ -67,7 +67,7 @@ const ExchangeProgram: ICareerPosition = {
   description: "",
   duration: "2014 - 2015",
   country: "Canada",
-  countryFlag: "🇨🇦",
+  countryCode: "ca",
   institutions: [UofM],
 };
 
@@ -76,7 +76,7 @@ const Bachelors: ICareerPosition = {
   description: "",
   duration: "2011 - 2018",
   country: "Brazil",
-  countryFlag: "🇧🇷",
+  countryCode: "br",
   institutions: [UFCG],
 };
 

@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/legacy/image";
+import {StaticImageData} from "next/legacy/image";
 
 /**
  * Represents a personal software project.
@@ -31,6 +31,6 @@ export interface ICareerPosition {
   description: string;
   duration: string;
   country: string;
-  countryFlag: string;
+  countryCode: string;
   institutions: IInstitution[];
 }
